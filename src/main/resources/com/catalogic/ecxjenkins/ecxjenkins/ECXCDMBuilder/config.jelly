@@ -1,0 +1,40 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout"
+         xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+    <!--
+      This jelly script is used for per-project configuration.
+
+      See global.jelly for a general discussion about jelly script.
+    -->
+
+    <!--
+      Creates a text field that shows the value of the "name" property.
+      When submitted, it will be passed to the corresponding constructor parameter.
+    -->
+    <f:entry title="Name " field="name">
+        <f:textbox/>
+    </f:entry>
+    <f:entry title="Password " field="password">
+        <f:password/>
+    </f:entry>
+<f:entry title="Production" field="production"
+ description="Don't allow self signed certificates">
+<f:checkbox />
+ </f:entry>
+    <f:entry title="URL " field="url">
+        <f:textbox/>
+    </f:entry>
+    <f:entry title="Select the job from the list to populate the text box below " field="jobList">
+        <f:select/>
+    </f:entry>
+    <f:entry title="Job " field="job">
+        <f:textbox/>
+    </f:entry>
+    <f:entry title="The maximum time (seconds) to wait for an ECX job to complete " field="maxWaitTime">
+        <f:textbox default="600"/>
+    </f:entry>
+    <f:validateButton
+            title="${%Test Connection}" progress="${%Testing...}"
+            method="testConnection" with="name,password,url,production"/>
+
+</j:jelly>

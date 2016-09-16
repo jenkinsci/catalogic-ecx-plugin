@@ -1,0 +1,7 @@
+<?jelly escape-by-default='true'?>
+<!--
+  This view is used to render the installed plugins page.
+-->
+<div>
+  This plugin integrates with Catalogic copy data management platform and facilitates the deployment of an virtual machine, application or storage volume as an optional step of a build or pipeline.
+</div>
