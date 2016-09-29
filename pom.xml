@@ -10,7 +10,7 @@
         <relativePath/>
     </parent>
     <groupId>com.catalogic.ecxjenkins</groupId>
-    <artifactId>ecxjenkins</artifactId>
+    <artifactId>copy-data-management-addon</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>hpi</packaging>
 
