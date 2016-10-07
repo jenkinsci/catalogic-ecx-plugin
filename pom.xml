@@ -13,7 +13,7 @@
     <artifactId>catalogic-ecx</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>hpi</packaging>
-
+   
     <properties>
         <!-- Baseline Jenkins version you use to build the plugin. Users must have this version or newer to run. -->
         <jenkins.version>1.609.1</jenkins.version>
@@ -30,7 +30,7 @@
 
     <name>ECX Copy Data Management Plugin</name>
     <description>Use this plugin to deploy a VM, Volume, or Application for Test Dev</description>
-    <url>https://wiki.jenkins-ci.org/display/JENKINS/ECXCDM+Plugin</url>
+    <url>https://wiki.jenkins-ci.org/display/JENKINS/CATALOGIC+ECX+PLUGIN</url>
 
     <!-- The default licence for Jenkins OSS Plugins is MIT. Substitute for the applicable one if needed. -->
 
@@ -50,13 +50,21 @@
       </developer>
     </developers>
     -->
-    <!-- Assuming you want to host on @jenkinsci:
+    
     <scm>
       <connection>scm:git:git://github.com/jenkinsci/${project.artifactId}-plugin.git</connection>
       <developerConnection>scm:git:git@github.com:jenkinsci/${project.artifactId}-plugin.git</developerConnection>
       <url>http://github.com/jenkinsci/${project.artifactId}-plugin</url>
     </scm>
-     -->
+
+    <developers>
+    <developer>
+      <id>neethapai</id>
+      <name>Neetha Pai</name>
+      <email>npai@catalogicsoftware.com</email>
+     </developer>
+    </developers>
+   
     <repositories>
         <repository>
             <id>repo.jenkins-ci.org</id>
