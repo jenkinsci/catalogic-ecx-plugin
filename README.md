@@ -1,15 +1,23 @@
 
+## Introduction
 This project contains code for a Jenkins plugin that integrates with
 Catalogic Software's [ECX](https://catalogicsoftware.com/products/ecx/)
 product.
 
-Before you prepare for Publishing the plugin into the marketplace make sure you follow the following steps:
-<ol start="1">
-<li>The github account should be configured for ssh access. More details can be found at https://help.github.com/articles/generating-an-ssh-key/
+## Releasing the Plugin
 
-<li>Create file settings.xml in your home directory. The contents of the file are as follows:
+Before you prepare for Publishing the plugin into the marketplace make
+sure you follow the following steps:  
 
-```<settings>
+* The github account should be configured for ssh access. More details
+  can be found at
+  https://help.github.com/articles/generating-an-ssh-key/
+
+* Create a file called "settings.xml" in your home directory (say,
+  /home/user/settings.xml). The contents of the file are as follows:
+
+```
+<settings>
   <pluginGroups>
     <pluginGroup>org.jenkins-ci.tools</pluginGroup>
   </pluginGroups>
@@ -17,8 +25,8 @@ Before you prepare for Publishing the plugin into the marketplace make sure you 
 <servers>
     <server>
       <id>maven.jenkins-ci.org</id> <!- For parent 1.397 or newer; before this use id java.net-m2-repository ->
-      <username>neethapai</username>
-      <password>pwSKMHXHgdhskbcvdw8hsghag7d</password>
+      <username>USERNAME</username>
+      <password>PASSWORD</password>
     </server>
   </servers>
 
@@ -53,15 +61,21 @@ Before you prepare for Publishing the plugin into the marketplace make sure you 
 </settings>
 ```
 
-<li>Make sure you have logged into artifactory atleast once.
+* Make sure you have logged into https://repo.jenkins-ci.org/ atleast
+  once.
 
-<li>Replace "USERNAME" with your Jenkins Jira username and "PASSWORD" with the Jenkins Jira password in encypted format. To get the encrypted password follow these steps:
- <ol type="a">
-  <li> Login https://repo.jenkins-ci.org/webapp/#/login with jenkins-ci.org account
-  <li> Go to https://repo.jenkins-ci.org/webapp/#/profile
-  <li> Unlock "Current Password"
-  <li> Add the "Encrypted Password" to your settings.xml file
- </ol>
+* Replace "USERNAME" with your Jenkins Jira username and "PASSWORD"
+with the Jenkins Jira password (in encypted format). To get the
+encrypted password follow these steps: 
+  * Login at https://repo.jenkins-ci.org/webapp/#/login with
+    jenkins-ci.org account
+  * Go to https://repo.jenkins-ci.org/webapp/#/profile
+  * Unlock "Current Password"
+  * Add the "Encrypted Password" to your settings.xml file
 
-<li>Run the maven command as  mvn -X -s /home/user/settings.xml release:prepare release:perform
-</ol>
+* Finally, run the following command to release the plugin.
+
+```
+$ mvn -X -s /home/user/settings.xml release:prepare release:perform
+```
+
