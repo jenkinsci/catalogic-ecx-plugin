@@ -4,12 +4,12 @@ Catalogic Software's [ECX](https://catalogicsoftware.com/products/ecx/)
 product.
 
 Before you prepare for Publishing the plugin into the marketplace make sure you follow the following steps:
+<ol start="1">
+<li>The github account should be configured for ssh access. More details can be found at https://help.github.com/articles/generating-an-ssh-key/
 
-1.The github account should be configured for ssh access. More details can be found at https://help.github.com/articles/generating-an-ssh-key/
+<li>Create file settings.xml in your home directory. The contents of the file are as follows:
 
-2.Create file settings.xml in your home directory. The contents of the file are as follows:
-
-<settings>
+```<settings>
   <pluginGroups>
     <pluginGroup>org.jenkins-ci.tools</pluginGroup>
   </pluginGroups>
@@ -51,13 +51,17 @@ Before you prepare for Publishing the plugin into the marketplace make sure you 
     </mirror>
   </mirrors>
 </settings>
+```
 
-3. Make sure you have logged into artifactory atleast once.
+<li>Make sure you have logged into artifactory atleast once.
 
-4. Replace "USERNAME" with your Jenkins Jira username and "PASSWORD" with the Jenkins Jira password in encypted format. To get the encrypted password follow these steps:
-  a) Login https://repo.jenkins-ci.org/webapp/#/login with jenkins-ci.org account
-  b) Go to https://repo.jenkins-ci.org/webapp/#/profile
-  c) Unlock "Current Password"
-  d) Add the "Encrypted Password" to your settings.xml file
+<li>Replace "USERNAME" with your Jenkins Jira username and "PASSWORD" with the Jenkins Jira password in encypted format. To get the encrypted password follow these steps:
+ <ol type="a">
+  <li> Login https://repo.jenkins-ci.org/webapp/#/login with jenkins-ci.org account
+  <li> Go to https://repo.jenkins-ci.org/webapp/#/profile
+  <li> Unlock "Current Password"
+  <li> Add the "Encrypted Password" to your settings.xml file
+ </ol>
 
-5. Run the maven command as  mvn -X -s /home/user/settings.xml release:prepare release:perform
+<li>Run the maven command as  mvn -X -s /home/user/settings.xml release:prepare release:perform
+</ol>
